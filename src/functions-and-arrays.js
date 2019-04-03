@@ -1,4 +1,19 @@
 // Find the maximum
+function maxOfTwoNumbers (num1, num2){
+
+  if(num1 > num2){
+    return num1;
+  }
+  else if(num1 < num2){
+    return num2;
+  }
+  else{
+    return num1;
+  }
+}
+
+maxOfTwoNumbers(3,5);
+
 
 // Finding Longest Word
 var words = [
@@ -11,13 +26,64 @@ var words = [
   'crackpot'
 ];
 
+function findLongestWord(words){
+
+  var maxSize = 0;
+  var position = 0;
+
+  for(var i = 0 ; i < words.length ; i++){
+    if(words[i].length > maxSize){
+      maxSize = words[i].length;
+      position = i;
+    }
+  }
+  return words[position];
+}
+
+findLongestWord(words);
+
 // Calculating a Sum
 
 var numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
+
+function sumArray(numbersToSum){
+  var sum=0;
+  for(var i = 0 ; i < numbersToSum.length ; i++){
+      sum += numbersToSum[i];
+    }
+
+    return sum;
+}
+
 // Calculate the Average
 
 var numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
+
+function averageNumbers(numbersForAverage){
+  var average = 0;
+  if(numbersForAverage.length !== 0){
+    average = (sumArray(numbersForAverage)/numbersForAverage.length);
+  }
+  else{
+    average = undefined;
+  }
+   return average;
+}
+
+
+function averageWordLength (wordsArray){
+  var lengthOfEachWord= [];
+  for(var i = 0 ; i < wordsArray.length ; i++){
+    lengthOfEachWord[i] = wordsArray[i].length;
+  }
+  var average=averageNumbers(lengthOfEachWord);
+
+return average;
+}
+
+
+
 
 // Array of Strings
 var wordsArr = [
@@ -32,6 +98,8 @@ var wordsArr = [
   'fuel',
   'palace'
 ];
+
+
 
 // Unique Arrays
 var wordsUnique = [
@@ -48,6 +116,27 @@ var wordsUnique = [
   'bring'
 ];
 
+
+function uniquifyArray(words){
+  if(words.length !== 0){
+    var copyOfWords = [];
+
+    for(var i = 0 ; i < words.length ; i++){
+  
+      if(copyOfWords.indexOf(words[i]) === -1 ){
+        copyOfWords.push(words[i]);
+      }    
+    }
+    return copyOfWords;
+  } else {
+    return undefined;
+  }
+
+}
+
+console.log(uniquifyArray(wordsUnique));
+
+
 // Finding Elements
 var wordsFind = [
   'machine',
@@ -59,6 +148,20 @@ var wordsFind = [
   'truth',
   'disobedience'
 ];
+
+
+function doesWordExists(words, wordToSearch){
+
+  for(var i = 0 ; i < words.length ; i++){
+    if(wordToSearch === words[i]){
+      return true;
+    }
+  }
+  return false;
+}
+
+console.log(doesWordExists(wordsFind));
+
 
 // Counting Repetion
 var wordsCount = [
@@ -74,6 +177,22 @@ var wordsCount = [
   'disobedience',
   'matter'
 ];
+
+function howManyTimes(words, wordToCount){
+
+  var counter = 0;
+  for(var i = 0 ; i < words.length ; i++){
+    if(wordToCount === words[i]){
+      counter++;
+    }
+  }
+  return counter;
+}
+
+console.log(howManyTimes(wordsCount));
+
+
+
 // Bonus Quest
 
 var matrix = [
